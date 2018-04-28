@@ -4,7 +4,7 @@ const PrettierPlugin = require('prettier-webpack-plugin');
 module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Calculator',
+      template: 'src/index.html',
     }),
     new PrettierPlugin({
       printWidth: 68,
