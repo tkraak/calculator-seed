@@ -7,8 +7,10 @@ Learn fundamental JavaScript via a [three-part blog post series](https://zellwk.
 - [x] [part 1 -- happy path](https://zellwk.com/blog/calculator-part-1/)
 - [ ] [part 2 -- edge cases](https://zellwk.com/blog/calculator-part-2/)
 - [ ] [part 3 -- refactor](https://zellwk.com/blog/calculator-part-3/)
+- [ ] modularize
 - [ ] write unit tests
 - [ ] write browser integration tests
+- [ ] deploy on netlify
 
 ## Getting Started
 
