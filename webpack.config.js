@@ -1,41 +1,46 @@
+const path = require('path');
+const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PrettierPlugin = require('prettier-webpack-plugin');
 
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules)/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["babel-preset-env"]
-          }
-        }
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-    ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-    }),
-    new PrettierPlugin({
-      printWidth: 68,
-      singleQuote: true,
-      trailingComma: 'es5',
-      extensions: ['.js', '.ts'],
-    }),
-  ],
-  devServer: {
-    stats: 'errors-only',
-    host: process.env.HOST, // defaults to `localhost`
-    port: process.env.PORT, // defaults to 8080
-    open: false,
-    overlay: true,
-  },
+const parts = require('./webpack.parts');
+
+const PATHS = {
+  app: path.join(__dirname, 'src'),
 };
+
+const commonConfig = merge([
+  {
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: path.join(PATHS.app, 'index.html')
+      }),
+      new PrettierPlugin({
+        printWidth: 68,
+        singleQuote: true,
+        trailingComma: 'es5',
+        extensions: ['.js', '.ts'],
+      }),
+    ],
+  },
+  parts.loadCSS(),
+  parts.loadJavaScript({ include: PATHS.app }),
+]);
+
+const productionConfig = merge([]);
+
+const developmentConfig = merge([
+  parts.devServer({
+    host: process.env.HOST,
+    port: process.env.PORT,
+  }),
+]);
+
+module.exports = mode => {
+  if (mode === 'production') {
+    return merge(commonConfig, productionConfig, { mode });
+  }
+
+  return merge(commonConfig, developmentConfig, { mode });
+};
+
