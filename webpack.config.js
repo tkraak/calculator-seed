@@ -13,7 +13,11 @@ module.exports = {
             presets: ["babel-preset-env"]
           }
         }
-      }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
     ]
   },
   plugins: [
@@ -24,6 +28,7 @@ module.exports = {
       printWidth: 68,
       singleQuote: true,
       trailingComma: 'es5',
+      extensions: ['.js', '.ts'],
     }),
   ],
   devServer: {
