@@ -4,18 +4,24 @@ Learn fundamental JavaScript via a [three-part blog post series](https://zellwk.
 
 ![Simple Calculator](https://zellwk.com/images/2018/calculator-1/calculator.gif)
 
-- [x] [part 1 -- happy path](https://zellwk.com/blog/calculator-part-1/)
-- [ ] [part 2 -- edge cases](https://zellwk.com/blog/calculator-part-2/)
-- [ ] [part 3 -- refactor](https://zellwk.com/blog/calculator-part-3/)
-- [ ] modularize
-- [ ] write unit tests
-- [ ] write browser integration tests
-- [ ] deploy on netlify
-
 ## Getting Started
 
-* fork and clone this repository
-* in your terminal:
-  * `npm install` or `yarn add` to install project dependencies
-  * `npm start` to run the calculator app at `http://localhost:8080` including auto browser refresh
-  * `npm run build` to bundle a production build powered by [webpack](https://webpack.js.org/)
+* clone the seed repository:
+  * `git clone https://github.com/tkraak/calculator-seed.git calculator`
+  * `cd calculator`
+* install project dependencies:
+  * `npm install` or `yarn install`
+* run the calculator app in your favorite browser at `http://localhost:8080`:
+  * `npm start`
+* bundle a production build powered by [webpack](https://webpack.js.org)
+  * `npm run build`
+
+## Optional but Recommended
+
+* push your work to your GitHub account:
+  * create a repository named `calculator` on GitHub
+  * `git remote set-url origin https://github.com/USERNAME/calculator.git` (ensure that `USERNAME` matches your GitHub username)
+  * `git push -u origin master`
+* keep your project's tooling up-to-date by periodically pulling from the seed repository (`upstream`):
+  * `git remote add upstream https://github.com/tkraak/calculator-seed.git`
+  * `git pull upstream master --rebase`
