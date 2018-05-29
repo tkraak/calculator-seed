@@ -15,6 +15,8 @@ Learn fundamental JavaScript via a [three-part blog post series](https://zellwk.
   * `npm start`
 * bundle a production build powered by [webpack](https://webpack.js.org)
   * `npm run build`
+* run tests with [AVA](https://github.com/avajs/ava)
+  * `npm test`
 
 ## Optional but Recommended
 
