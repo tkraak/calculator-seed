@@ -63,3 +63,17 @@ exports.extractCSS = ({ include, exclude, use = [] }) => {
     plugins: [plugin],
   };
 };
+
+exports.loadPrettier = ({ include, exclude } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'prettier-loader',
+        },
+      },
+    ],
+  },
+});

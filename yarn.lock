@@ -3513,7 +3513,7 @@ ignore-walk@^3.0.1:
   dependencies:
     minimatch "^3.0.4"
 
-ignore@^3.3.5:
+ignore@^3.3.5, ignore@^3.3.7:
   version "3.3.8"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.8.tgz#3f8e9c35d38708a3a7e0e9abb6c73e7ee7707b2b"
 
@@ -5649,9 +5649,12 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier-webpack-plugin@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/prettier-webpack-plugin/-/prettier-webpack-plugin-1.0.0.tgz#75deb5af9f770413d0189ac3c4c29cbc4e14e4b3"
+prettier-loader@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/prettier-loader/-/prettier-loader-2.1.0.tgz#9445ec8933b7c457b3de555220a614676c92f7ba"
+  dependencies:
+    ignore "^3.3.7"
+    loader-utils "^1.1.0"
 
 prettier@1.12.0:
   version "1.12.0"
